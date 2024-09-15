@@ -1,9 +1,9 @@
 // Task 1: Create an Inventory Array of Product Objects
 
     // creating an Array with each product and their variables.
-let inventory = [
-{ name:"mouse",    price: 15, quantity: 14, lowStockLevel: 5},
-{ name:"charger",  price: 20, quantity: 42, lowStockLevel: 5},
+const inventory = [
+{ name:"mouse",    price: 15, quantity: 62, lowStockLevel: 5},
+{ name:"charger",  price: 20, quantity: 10, lowStockLevel: 20},
 { name:"cpu",      price: 30, quantity: 36, lowStockLevel: 5},
 { name:"gpu",      price: 40, quantity: 32, lowStockLevel: 5},
 { name:"Keyboard", price: 50, quantity: 96, lowStockLevel: 5}
@@ -26,13 +26,23 @@ const stockStatus = inventory.quantity <= inventory.lowStockLevel ? "Low Stock" 
 
 function updateStock(inventory) {
     let unitsSold = 15;
-    let stockLeft = inventory[0].quantity - unitsSold;
+    let stockLeft = inventory[0].quantity - unitsSold; // subtracts the first object in the inventory array by unitsSold
       if (stockLeft === 0 || inventory[0].quantity < unitsSold)
             return (` ${inventory[0].name} is out of Stock`);
       else if (stockLeft <= inventory[0].lowStockLevel)
             return (` ${inventory[0].name} is low Stock`);
         else
-            return (`${inventory[0].name} went through`);
+            return (`${inventory[0].name} pruchase went through`);
 };
 console.log(updateStock(inventory));
 
+
+// Task 4: Create a Function to Check Low Stock Products
+
+function checkLowStock(inventory) {
+    inventory.forEach(inventoryProduct => {
+        if (inventoryProduct.quantity <= inventoryProduct.lowStockInventory) 
+            return (`${inventoryProduct.name} is Low Stock`);
+        });
+}
+console.log(checkLowStock(inventory));
