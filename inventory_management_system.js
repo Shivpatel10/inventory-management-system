@@ -5,8 +5,8 @@ const inventory = [
 { name:"mouse",    price: 15, quantity: 62, lowStockLevel: 5},
 { name:"charger",  price: 20, quantity: 10, lowStockLevel: 20},
 { name:"cpu",      price: 30, quantity: 36, lowStockLevel: 5},
-{ name:"gpu",      price: 40, quantity: 32, lowStockLevel: 5},
-{ name:"Keyboard", price: 50, quantity: 96, lowStockLevel: 5}
+{ name:"gpu",      price: 40, quantity: 33, lowStockLevel: 5},
+{ name:"Keyboard", price: 50, quantity: 99, lowStockLevel: 5}
 ];
 
 // Task 2: Create a Function to Display Product Details
@@ -44,5 +44,17 @@ function checkLowStock(inventory) {
         if (inventoryProduct.quantity <= inventoryProduct.lowStockInventory) 
             return (`${inventoryProduct.name} is Low Stock`);
         });
-}
+};
 console.log(checkLowStock(inventory));
+
+
+// Task 5: Create a Function to Calculate Total Inventory Value
+
+function calculateInventoryValue() {
+        return inventory.reduce((totalProductsValue, product) => { 
+            return totalProductsValue + (product.price * product.quantity , 0);
+        });
+    };
+    console.log(`Total Inventory Value is $${calculateInventoryValue(inventory)}`);
+
+
