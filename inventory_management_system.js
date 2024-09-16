@@ -45,12 +45,12 @@ function checkLowStock(inventory) {
             return (`${inventoryProduct.name} is Low Stock`);
         });
 };
-console.log(checkLowStock(inventory));
+//console.log(checkLowStock(inventory));
 
 
 // Task 5: Create a Function to Calculate Total Inventory Value
 
-function calculateInventoryValue() {
+function calculateInventoryValue(inventory) {
         return inventory.reduce((totalProductsValue, product) => { 
             return totalProductsValue + (product.price * product.quantity , 0);
         });
@@ -63,5 +63,5 @@ function calculateInventoryValue() {
 function processSale(name) {
     const item = inventory.find(item => item.name === name);
         return updateStock(inventory)
-            return item ? item.name: 'Skater not found';
+            return item ? item.name: 'item not found';
 };
